@@ -1,10 +1,15 @@
 //The BookRoom service definition.
 service BookHotelRoom{
-    rpc GetRoom (google.protobuf.Empty) returns (RoomReply){}
+    rpc GetRoom (Dates) returns (RoomReply){}
 
 }
 
 // The response message containing the Room
 message RoomReply{
     required string message = 1;
+}
+
+message Dates{
+    required int32 debut = 1;
+    required int32 fin = 2;
 }
