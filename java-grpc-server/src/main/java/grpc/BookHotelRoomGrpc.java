@@ -3,44 +3,41 @@ package grpc;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
- * <pre>
- *The BookRoom service definition.
- * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.42.1)",
-    comments = "Source: Hotel.proto")
+    comments = "Source: infres.ws.grpc.BookHotelRoom.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BookHotelRoomGrpc {
 
   private BookHotelRoomGrpc() {}
 
-  public static final String SERVICE_NAME = "BookHotelRoom";
+  public static final String SERVICE_NAME = "infres.ws.grpc.BookHotelRoom";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<Hotel.Dates,
-      Hotel.RoomData> getGetRoomMethod;
+  private static volatile io.grpc.MethodDescriptor<BookHotelRoomOuterClass.RoomNumber,
+      BookHotelRoomOuterClass.RoomData> getGetRoomMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetRoom",
-      requestType = Hotel.Dates.class,
-      responseType = Hotel.RoomData.class,
+      requestType = BookHotelRoomOuterClass.RoomNumber.class,
+      responseType = BookHotelRoomOuterClass.RoomData.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<Hotel.Dates,
-      Hotel.RoomData> getGetRoomMethod() {
-    io.grpc.MethodDescriptor<Hotel.Dates, Hotel.RoomData> getGetRoomMethod;
+  public static io.grpc.MethodDescriptor<BookHotelRoomOuterClass.RoomNumber,
+      BookHotelRoomOuterClass.RoomData> getGetRoomMethod() {
+    io.grpc.MethodDescriptor<BookHotelRoomOuterClass.RoomNumber, BookHotelRoomOuterClass.RoomData> getGetRoomMethod;
     if ((getGetRoomMethod = BookHotelRoomGrpc.getGetRoomMethod) == null) {
       synchronized (BookHotelRoomGrpc.class) {
         if ((getGetRoomMethod = BookHotelRoomGrpc.getGetRoomMethod) == null) {
           BookHotelRoomGrpc.getGetRoomMethod = getGetRoomMethod =
-              io.grpc.MethodDescriptor.<Hotel.Dates, Hotel.RoomData>newBuilder()
+              io.grpc.MethodDescriptor.<BookHotelRoomOuterClass.RoomNumber, BookHotelRoomOuterClass.RoomData>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRoom"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Hotel.Dates.getDefaultInstance()))
+                  BookHotelRoomOuterClass.RoomNumber.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Hotel.RoomData.getDefaultInstance()))
+                  BookHotelRoomOuterClass.RoomData.getDefaultInstance()))
               .setSchemaDescriptor(new BookHotelRoomMethodDescriptorSupplier("GetRoom"))
               .build();
         }
@@ -49,29 +46,29 @@ public final class BookHotelRoomGrpc {
     return getGetRoomMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<Hotel.Booking,
-      Hotel.Book> getBookRoomMethod;
+  private static volatile io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Booking,
+      BookHotelRoomOuterClass.Book> getBookRoomMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "BookRoom",
-      requestType = Hotel.Booking.class,
-      responseType = Hotel.Book.class,
+      requestType = BookHotelRoomOuterClass.Booking.class,
+      responseType = BookHotelRoomOuterClass.Book.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<Hotel.Booking,
-      Hotel.Book> getBookRoomMethod() {
-    io.grpc.MethodDescriptor<Hotel.Booking, Hotel.Book> getBookRoomMethod;
+  public static io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Booking,
+      BookHotelRoomOuterClass.Book> getBookRoomMethod() {
+    io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Booking, BookHotelRoomOuterClass.Book> getBookRoomMethod;
     if ((getBookRoomMethod = BookHotelRoomGrpc.getBookRoomMethod) == null) {
       synchronized (BookHotelRoomGrpc.class) {
         if ((getBookRoomMethod = BookHotelRoomGrpc.getBookRoomMethod) == null) {
           BookHotelRoomGrpc.getBookRoomMethod = getBookRoomMethod =
-              io.grpc.MethodDescriptor.<Hotel.Booking, Hotel.Book>newBuilder()
+              io.grpc.MethodDescriptor.<BookHotelRoomOuterClass.Booking, BookHotelRoomOuterClass.Book>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BookRoom"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Hotel.Booking.getDefaultInstance()))
+                  BookHotelRoomOuterClass.Booking.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  Hotel.Book.getDefaultInstance()))
+                  BookHotelRoomOuterClass.Book.getDefaultInstance()))
               .setSchemaDescriptor(new BookHotelRoomMethodDescriptorSupplier("BookRoom"))
               .build();
         }
@@ -125,23 +122,20 @@ public final class BookHotelRoomGrpc {
   }
 
   /**
-   * <pre>
-   *The BookRoom service definition.
-   * </pre>
    */
   public static abstract class BookHotelRoomImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void getRoom(Hotel.Dates request,
-                        io.grpc.stub.StreamObserver<Hotel.RoomData> responseObserver) {
+    public void getRoom(BookHotelRoomOuterClass.RoomNumber request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomData> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRoomMethod(), responseObserver);
     }
 
     /**
      */
-    public void bookRoom(Hotel.Booking request,
-                         io.grpc.stub.StreamObserver<Hotel.Book> responseObserver) {
+    public void bookRoom(BookHotelRoomOuterClass.Booking request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.Book> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBookRoomMethod(), responseObserver);
     }
 
@@ -151,24 +145,21 @@ public final class BookHotelRoomGrpc {
             getGetRoomMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                Hotel.Dates,
-                Hotel.RoomData>(
+                BookHotelRoomOuterClass.RoomNumber,
+                BookHotelRoomOuterClass.RoomData>(
                   this, METHODID_GET_ROOM)))
           .addMethod(
             getBookRoomMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                Hotel.Booking,
-                Hotel.Book>(
+                BookHotelRoomOuterClass.Booking,
+                BookHotelRoomOuterClass.Book>(
                   this, METHODID_BOOK_ROOM)))
           .build();
     }
   }
 
   /**
-   * <pre>
-   *The BookRoom service definition.
-   * </pre>
    */
   public static final class BookHotelRoomStub extends io.grpc.stub.AbstractAsyncStub<BookHotelRoomStub> {
     private BookHotelRoomStub(
@@ -184,25 +175,22 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
-    public void getRoom(Hotel.Dates request,
-                        io.grpc.stub.StreamObserver<Hotel.RoomData> responseObserver) {
+    public void getRoom(BookHotelRoomOuterClass.RoomNumber request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomData> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetRoomMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void bookRoom(Hotel.Booking request,
-                         io.grpc.stub.StreamObserver<Hotel.Book> responseObserver) {
+    public void bookRoom(BookHotelRoomOuterClass.Booking request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.Book> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBookRoomMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
-   * <pre>
-   *The BookRoom service definition.
-   * </pre>
    */
   public static final class BookHotelRoomBlockingStub extends io.grpc.stub.AbstractBlockingStub<BookHotelRoomBlockingStub> {
     private BookHotelRoomBlockingStub(
@@ -218,23 +206,20 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
-    public Hotel.RoomData getRoom(Hotel.Dates request) {
+    public BookHotelRoomOuterClass.RoomData getRoom(BookHotelRoomOuterClass.RoomNumber request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRoomMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public Hotel.Book bookRoom(Hotel.Booking request) {
+    public BookHotelRoomOuterClass.Book bookRoom(BookHotelRoomOuterClass.Booking request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBookRoomMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * <pre>
-   *The BookRoom service definition.
-   * </pre>
    */
   public static final class BookHotelRoomFutureStub extends io.grpc.stub.AbstractFutureStub<BookHotelRoomFutureStub> {
     private BookHotelRoomFutureStub(
@@ -250,16 +235,16 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<Hotel.RoomData> getRoom(
-        Hotel.Dates request) {
+    public com.google.common.util.concurrent.ListenableFuture<BookHotelRoomOuterClass.RoomData> getRoom(
+        BookHotelRoomOuterClass.RoomNumber request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetRoomMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<Hotel.Book> bookRoom(
-        Hotel.Booking request) {
+    public com.google.common.util.concurrent.ListenableFuture<BookHotelRoomOuterClass.Book> bookRoom(
+        BookHotelRoomOuterClass.Booking request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBookRoomMethod(), getCallOptions()), request);
     }
@@ -286,12 +271,12 @@ public final class BookHotelRoomGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_ROOM:
-          serviceImpl.getRoom((Hotel.Dates) request,
-              (io.grpc.stub.StreamObserver<Hotel.RoomData>) responseObserver);
+          serviceImpl.getRoom((BookHotelRoomOuterClass.RoomNumber) request,
+              (io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomData>) responseObserver);
           break;
         case METHODID_BOOK_ROOM:
-          serviceImpl.bookRoom((Hotel.Booking) request,
-              (io.grpc.stub.StreamObserver<Hotel.Book>) responseObserver);
+          serviceImpl.bookRoom((BookHotelRoomOuterClass.Booking) request,
+              (io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.Book>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -315,12 +300,12 @@ public final class BookHotelRoomGrpc {
 
     @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return Hotel.getDescriptor();
+      return BookHotelRoomOuterClass.getDescriptor();
     }
 
     @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("BookHotelRoom");
+      return getFileDescriptor().findServiceByName("infres.ws.grpc.BookHotelRoom");
     }
   }
 
