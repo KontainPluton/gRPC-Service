@@ -6,5 +6,5 @@ service BookHotelRoom{
 
 // The response message containing the Room
 message RoomReply{
-    string message = 1;
+    required string message = 1;
 }
