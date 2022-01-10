@@ -1,3 +1,7 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
 //The BookRoom service definition.
 service BookHotelRoom{
     rpc GetRoom (Dates) returns (RoomData){}
@@ -10,11 +14,11 @@ enum RoomType{
 }
 
 message RoomData{
-    required RoomType type = 1;
-    required float price = 2;
+    RoomType type = 1;
+    float price = 2;
 }
 
 message Dates{
-    required int64 Debut = 1;
-    required int64 fin = 2;
+    google.protobuf.Timestamp Debut = 1;
+    google.protobuf.Timestamp fin = 2;
 }
