@@ -5,6 +5,7 @@ import "google/protobuf/timestamp.proto";
 //The BookRoom service definition.
 service BookHotelRoom{
     rpc GetRoom (Dates) returns (RoomData){}
+    rpc BookRoom (Booking) returns(Book){}
 }
 
 enum RoomType{
@@ -19,6 +20,16 @@ message RoomData{
 }
 
 message Dates{
-    google.protobuf.Timestamp Debut = 1;
+    google.protobuf.Timestamp debut = 1;
     google.protobuf.Timestamp fin = 2;
+}
+
+message Booking{
+    RoomType type = 1;
+    google.protobuf.Timestamp debut = 2;
+    google.protobuf.Timestamp fin = 3;
+}
+
+message Book{
+    bool bookStatus = 1; //True if booked, false if not.
 }
