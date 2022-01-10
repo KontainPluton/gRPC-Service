@@ -6,13 +6,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.42.1)",
-    comments = "Source: infres.ws.grpc.BookHotelRoom.proto")
+    comments = "Source: BookHotelRoom.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BookHotelRoomGrpc {
 
   private BookHotelRoomGrpc() {}
 
-  public static final String SERVICE_NAME = "infres.ws.grpc.BookHotelRoom";
+  public static final String SERVICE_NAME = "BookHotelRoom";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<BookHotelRoomOuterClass.RoomNumber,
@@ -305,7 +305,7 @@ public final class BookHotelRoomGrpc {
 
     @Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("infres.ws.grpc.BookHotelRoom");
+      return getFileDescriptor().findServiceByName("BookHotelRoom");
     }
   }
 

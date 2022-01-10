@@ -29,7 +29,7 @@ message Dates{
 }
 
 message Booking{
-    int32 type = 1;
+    int32 numero = 1;
     Dates dateDebut = 2;
     Dates dateFin = 3;
 }
