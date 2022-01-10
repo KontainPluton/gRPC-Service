@@ -1,10 +1,8 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-
 //The BookRoom service definition.
 service BookHotelRoom{
-    rpc GetRoom (Dates) returns (RoomData){}
+    rpc GetRoom (RoomNumber) returns (RoomData){}
     rpc BookRoom (Booking) returns(Book){}
 }
 
@@ -19,15 +17,20 @@ message RoomData{
     float price = 2;
 }
 
+message RoomNumber{
+    uint32 numero = 1;
+}
+
 message Dates{
-    google.protobuf.Timestamp debut = 1;
-    google.protobuf.Timestamp fin = 2;
+    int32 day = 1;
+    int32 month = 2;
+    int32 year = 3;
 }
 
 message Booking{
-    RoomType type = 1;
-    google.protobuf.Timestamp debut = 2;
-    google.protobuf.Timestamp fin = 3;
+    int32 type = 1;
+    Dates dateDebut = 2;
+    Dates dateFin = 3;
 }
 
 message Book{
