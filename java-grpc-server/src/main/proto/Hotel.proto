@@ -1,17 +1,10 @@
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-  // Sends another greeting
-  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+//The BookRoom service definition.
+service BookHotelRoom{
+    rpc GetRoom (google.protobuf.Empty) returns (RoomReply){}
+
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+// The response message containing the Room
+message RoomReply{
+    string message = 1;
 }
