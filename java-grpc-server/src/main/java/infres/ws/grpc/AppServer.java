@@ -5,7 +5,7 @@ import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
-public class App {
+public class AppServer {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         Server server = ServerBuilder.forPort(8080).addService(new BookHotelRoom()).build();
