@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 //The BookRoom service definition.
-service BookHotelRoom{
+service Hotel{
     rpc GetRoom (Dates) returns (RoomData){}
     rpc BookRoom (Booking) returns(Book){}
 }
