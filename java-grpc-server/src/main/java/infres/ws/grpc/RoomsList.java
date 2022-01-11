@@ -6,7 +6,6 @@ import grpc.BookHotelRoomOuterClass;
 
 public class RoomsList {
 
-    private HashMap<Integer, Boolean> roomsReservation;
     private HashMap<Integer, Float> roomsPrice;
     private HashMap<Integer, List<DateReservation>> roomsReservationDates;
     private HashMap<Integer, BookHotelRoomOuterClass.RoomType> roomsType;
@@ -29,12 +28,10 @@ public class RoomsList {
     }
 
     private RoomsList() {
-        roomsReservation = new HashMap<>();
         roomsPrice = new HashMap<>();
         roomsReservationDates = new HashMap<>();
         roomsType = new HashMap<>();
         for (int i = 1; i < 21; i++) {
-            roomsReservation.put(i, false);
             roomsPrice.put(i, new Random().nextFloat() * 100);
             roomsReservationDates.put(i, new ArrayList<>());
             roomsType.put(i, BookHotelRoomOuterClass.RoomType.HAUT_GAMME);
@@ -42,25 +39,23 @@ public class RoomsList {
     }
 
     public boolean bookRoom(int roomNum, Date dateDebut, Date dateFin) {
-        if (!roomsReservation.get(roomNum)) {
-            DateReservation toAdd = null;
-            List<DateReservation> dateReservations = roomsReservationDates.get(roomNum);
-            if (!dateReservations.isEmpty()) {
-                for (DateReservation date : dateReservations) {
-                    if (date.dateDebut.after(dateFin) || date.dateFin.before(dateDebut)) {
-                        toAdd = new DateReservation(dateDebut, dateFin);
-                    }
-                }
-            } else {
-                dateReservations.add(new DateReservation(dateDebut, dateFin));
-                roomsReservationDates.put(roomNum, dateReservations);
-                return true;
+        DateReservation toAdd = null;
+        List<DateReservation> dateReservations = roomsReservationDates.get(roomNum);
+        if (!dateReservations.isEmpty()) {
+            boolean test = true;
+            for (DateReservation date : dateReservations) {
+                test = (date.dateDebut.after(dateFin) || date.dateFin.before(dateDebut)) && test;
             }
-            if (toAdd != null) {
-                dateReservations.add(toAdd);
-                roomsReservationDates.put(roomNum, dateReservations);
-                return true;
-            }
+            toAdd = test ? new DateReservation(dateDebut, dateFin) : null;
+        } else {
+            dateReservations.add(new DateReservation(dateDebut, dateFin));
+            roomsReservationDates.put(roomNum, dateReservations);
+            return true;
+        }
+        if (toAdd != null) {
+            dateReservations.add(toAdd);
+            roomsReservationDates.put(roomNum, dateReservations);
+            return true;
         }
         return false;
     }
