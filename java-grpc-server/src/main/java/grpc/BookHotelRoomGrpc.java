@@ -15,6 +15,37 @@ public final class BookHotelRoomGrpc {
   public static final String SERVICE_NAME = "BookHotelRoom";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Empty,
+      BookHotelRoomOuterClass.RoomNumbers> getGetAllRoomMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAllRoom",
+      requestType = BookHotelRoomOuterClass.Empty.class,
+      responseType = BookHotelRoomOuterClass.RoomNumbers.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Empty,
+      BookHotelRoomOuterClass.RoomNumbers> getGetAllRoomMethod() {
+    io.grpc.MethodDescriptor<BookHotelRoomOuterClass.Empty, BookHotelRoomOuterClass.RoomNumbers> getGetAllRoomMethod;
+    if ((getGetAllRoomMethod = BookHotelRoomGrpc.getGetAllRoomMethod) == null) {
+      synchronized (BookHotelRoomGrpc.class) {
+        if ((getGetAllRoomMethod = BookHotelRoomGrpc.getGetAllRoomMethod) == null) {
+          BookHotelRoomGrpc.getGetAllRoomMethod = getGetAllRoomMethod =
+              io.grpc.MethodDescriptor.<BookHotelRoomOuterClass.Empty, BookHotelRoomOuterClass.RoomNumbers>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAllRoom"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  BookHotelRoomOuterClass.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  BookHotelRoomOuterClass.RoomNumbers.getDefaultInstance()))
+              .setSchemaDescriptor(new BookHotelRoomMethodDescriptorSupplier("GetAllRoom"))
+              .build();
+        }
+      }
+    }
+    return getGetAllRoomMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<BookHotelRoomOuterClass.RoomNumber,
       BookHotelRoomOuterClass.RoomData> getGetRoomMethod;
 
@@ -127,6 +158,13 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
+    public void getAllRoom(BookHotelRoomOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomNumbers> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAllRoomMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void getRoom(BookHotelRoomOuterClass.RoomNumber request,
         io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomData> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRoomMethod(), responseObserver);
@@ -141,6 +179,13 @@ public final class BookHotelRoomGrpc {
 
     @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getGetAllRoomMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                BookHotelRoomOuterClass.Empty,
+                BookHotelRoomOuterClass.RoomNumbers>(
+                  this, METHODID_GET_ALL_ROOM)))
           .addMethod(
             getGetRoomMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -171,6 +216,14 @@ public final class BookHotelRoomGrpc {
     protected BookHotelRoomStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new BookHotelRoomStub(channel, callOptions);
+    }
+
+    /**
+     */
+    public void getAllRoom(BookHotelRoomOuterClass.Empty request,
+        io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomNumbers> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAllRoomMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -206,6 +259,13 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
+    public BookHotelRoomOuterClass.RoomNumbers getAllRoom(BookHotelRoomOuterClass.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAllRoomMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public BookHotelRoomOuterClass.RoomData getRoom(BookHotelRoomOuterClass.RoomNumber request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetRoomMethod(), getCallOptions(), request);
@@ -235,6 +295,14 @@ public final class BookHotelRoomGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<BookHotelRoomOuterClass.RoomNumbers> getAllRoom(
+        BookHotelRoomOuterClass.Empty request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAllRoomMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<BookHotelRoomOuterClass.RoomData> getRoom(
         BookHotelRoomOuterClass.RoomNumber request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -250,8 +318,9 @@ public final class BookHotelRoomGrpc {
     }
   }
 
-  private static final int METHODID_GET_ROOM = 0;
-  private static final int METHODID_BOOK_ROOM = 1;
+  private static final int METHODID_GET_ALL_ROOM = 0;
+  private static final int METHODID_GET_ROOM = 1;
+  private static final int METHODID_BOOK_ROOM = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -270,6 +339,10 @@ public final class BookHotelRoomGrpc {
     @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GET_ALL_ROOM:
+          serviceImpl.getAllRoom((BookHotelRoomOuterClass.Empty) request,
+              (io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomNumbers>) responseObserver);
+          break;
         case METHODID_GET_ROOM:
           serviceImpl.getRoom((BookHotelRoomOuterClass.RoomNumber) request,
               (io.grpc.stub.StreamObserver<BookHotelRoomOuterClass.RoomData>) responseObserver);
@@ -339,6 +412,7 @@ public final class BookHotelRoomGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BookHotelRoomFileDescriptorSupplier())
+              .addMethod(getGetAllRoomMethod())
               .addMethod(getGetRoomMethod())
               .addMethod(getBookRoomMethod())
               .build();

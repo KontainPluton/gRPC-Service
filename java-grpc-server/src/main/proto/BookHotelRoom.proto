@@ -3,6 +3,7 @@ syntax = "proto3";
 //The BookRoom service definition.
 
 service BookHotelRoom{
+    rpc GetAllRoom (Empty) returns (RoomNumbers){}
     rpc GetRoom (RoomNumber) returns (RoomData){}
     rpc BookRoom (Booking) returns(Book){}
 }
@@ -42,4 +43,14 @@ message Booking{
 //Etat de la reservation
 message Book{
     bool bookStatus = 1; //True if booked, false if not.
+}
+
+//Message vide
+message Empty{
+
+}
+
+//Contient toutes les chambres
+message RoomNumbers {
+    repeated RoomNumber roomNumber = 1;
 }

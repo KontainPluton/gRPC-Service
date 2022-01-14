@@ -6,6 +6,7 @@ import grpc.BookHotelRoomOuterClass;
 
 public class RoomsList {
 
+    private List<Integer> ids;
     private HashMap<Integer, Float> roomsPrice;
     private HashMap<Integer, List<DateReservation>> roomsReservationDates;
     private HashMap<Integer, BookHotelRoomOuterClass.RoomType> roomsType;
@@ -28,18 +29,24 @@ public class RoomsList {
     }
 
     private RoomsList() {
+        ids = new ArrayList<>();
         roomsPrice = new HashMap<>();
         roomsReservationDates = new HashMap<>();
         roomsType = new HashMap<>();
         for (int i = 1; i < 21; i++) {
+            ids.add(i);
             roomsPrice.put(i, new Random().nextFloat() * 100);
             roomsReservationDates.put(i, new ArrayList<>());
             roomsType.put(i, BookHotelRoomOuterClass.RoomType.HAUT_GAMME);
         }
     }
 
+    public List<Integer> getIds() {
+        return ids;
+    }
+
     public boolean bookRoom(int roomNum, Date dateDebut, Date dateFin) {
-        DateReservation toAdd = null;
+        DateReservation toAdd;
         List<DateReservation> dateReservations = roomsReservationDates.get(roomNum);
         if (!dateReservations.isEmpty()) {
             boolean test = true;

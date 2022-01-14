@@ -43,6 +43,19 @@ public class BookHotelRoom extends BookHotelRoomGrpc.BookHotelRoomImplBase {
         responseObserver.onCompleted();
     }
 
+    @Override
+    public void getAllRoom(BookHotelRoomOuterClass.Empty request, StreamObserver<BookHotelRoomOuterClass.RoomNumbers> responseObserver) {
+
+        BookHotelRoomOuterClass.RoomNumbers.Builder roomsBuilder = BookHotelRoomOuterClass.RoomNumbers.newBuilder();
+
+        for(Integer i : RoomsList.getInstance().getIds()) {
+            roomsBuilder.setRoomNumber(i, BookHotelRoomOuterClass.RoomNumber.newBuilder().setNumero(i).build());
+        }
+
+        responseObserver.onNext(roomsBuilder.build());
+        responseObserver.onCompleted();
+    }
+
     private Date dateToDate(BookHotelRoomOuterClass.Dates date) throws ParseException {
         String day = String.valueOf(date.getDay());
         day = day.length() == 1 ? "0".concat(day) : day;
