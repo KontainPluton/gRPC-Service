@@ -37,7 +37,7 @@ public class RoomsList {
             ids.add(i);
             roomsPrice.put(i, new Random().nextFloat() * 100);
             roomsReservationDates.put(i, new ArrayList<>());
-            roomsType.put(i, BookHotelRoomOuterClass.RoomType.HAUT_GAMME);
+            roomsType.put(i, new Random().nextBoolean() ? BookHotelRoomOuterClass.RoomType.HAUT_GAMME : BookHotelRoomOuterClass.RoomType.BASIQUE);
         }
     }
 

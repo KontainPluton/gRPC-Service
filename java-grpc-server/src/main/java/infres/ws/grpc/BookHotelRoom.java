@@ -49,7 +49,7 @@ public class BookHotelRoom extends BookHotelRoomGrpc.BookHotelRoomImplBase {
         BookHotelRoomOuterClass.RoomNumbers.Builder roomsBuilder = BookHotelRoomOuterClass.RoomNumbers.newBuilder();
 
         for(Integer i : RoomsList.getInstance().getIds()) {
-            roomsBuilder.setRoomNumber(i, BookHotelRoomOuterClass.RoomNumber.newBuilder().setNumero(i).build());
+            roomsBuilder.addRoomNumber(BookHotelRoomOuterClass.RoomNumber.newBuilder().setNumero(i).build());
         }
 
         responseObserver.onNext(roomsBuilder.build());
