@@ -1,0 +1,5 @@
+FROM openjdk:11
+COPY ../java-grpc-server/target/InfresGrpcWebService-1.0-jar-with-dependencies.jar /usr/src/java-grpc-server/to-run.jar
+WORKDIR /usr/src/java-grpc-server/
+EXPOSE 8070
+CMD ["java", "-jar", "./to-run.jar"]
