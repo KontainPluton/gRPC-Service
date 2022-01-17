@@ -1,6 +1,6 @@
 # gRPC-Service
 
-[![Language](https://shield.lylium.fr/badge/-Java-007396?logo=java&logoColor=white&style=for-the-badge)](https://openjdk.java.net/)
+[![Language](https://shield.lylium.fr:/github/languages/top/KontainPluton/gRPC-Service?color=007396&logo=java&logoColor=white&labelColor=bd7509&style=for-the-badge)](https://openjdk.java.net/)
 ![Maven](https://shield.lylium.fr/badge/Use-Maven-C71A36?logo=Apache-Maven&logoColor=white&style=for-the-badge)
 
 ![IMT](https://shield.lylium.fr/badge/Made%20at-IMT%20Mines%20Al%C3%A8s-00bcd7?logo=mines&logoColor=white&style=for-the-badge&labelColor=black)
