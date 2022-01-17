@@ -7,6 +7,6 @@
 ![Contributor](https://shield.lylium.fr:/github/contributors/KontainPluton/gRPC-Service?style=for-the-badge)
 ![GitHub last commit](https://shield.lylium.fr:/github/last-commit/KontainPluton/gRPC-Service?style=for-the-badge)
 
-*[Test project for a course at ITM]*
+*[Test project for a course at IMT]*
 
 ## Information
