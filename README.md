@@ -19,7 +19,11 @@ This service implements a test gRPC API to query hotel rooms.
 
 ### With Docker ![Docker](https://shield.lylium.fr/badge/-Docker-2496ED?logo=docker&logoColor=white&style=f&style=flat-square)
 
-By default, this project is configured to run with docker. You will only have to run the **docker-compose** file, or the **DockerFile** of the rest server and keycloak server. (docker image are not stored on docker hub, you will have to build them with DockerFile first)
+By default, this project is configured to run with docker.
+
+To run project, you can choose to use the **docker-compose** file, or build manually images from the **DockerFile** of each service. (docker image are not stored on docker hub, you will have to build them with DockerFile first)
+
+To build the grpc service image, you can follow the guide here : https://github.com/KontainPluton/gRPC-Service/blob/main/docker/createDockerImage.md
 
 ---
 
