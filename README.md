@@ -30,5 +30,18 @@ By default, this project is configured to run with docker. You will only have to
 - Have Java 1.8 (jdk) installed (https://openjdk.java.net/install/)
 - Have Apache Maven installed (https://maven.apache.org/download.cgi)
 
+#### **Build the gRPC-Service**
 
-You also will have to change the environment variable **USE_DOCKER** in Environment.java to false and eventualy change the grpc server adress
+- Go into `java-grpc-server` folder.
+- Run : `mvn clean`
+- Run : `mvn install`
+
+Into the `target` folder, you will find two jar file :
+- `InfresGrpcWebService-1.0-jar-with-dependencies.jar` represents the gRPC server.
+- `InfresGrpcWebService-1.0.jar` representes the gRPC client (for testing).
+
+Finally, find the `java-restserver.war` file (maven target folder), and move it into your tomcat webapps folder.
+
+
+
+If you run the server part, you can access to it at : localhost:8070
