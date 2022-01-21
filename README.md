@@ -40,8 +40,11 @@ Into the `target` folder, you will find two jar file :
 - `InfresGrpcWebService-1.0-jar-with-dependencies.jar` represents the gRPC server.
 - `InfresGrpcWebService-1.0.jar` representes the gRPC client (for testing).
 
-Finally, find the `java-restserver.war` file (maven target folder), and move it into your tomcat webapps folder.
+To run the server :
 
+```
+java -jar InfresGrpcWebService-1.0-jar-with-dependencies.jar
+```
 
 
 If you run the server part, you can access to it at : localhost:8070
