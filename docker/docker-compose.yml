@@ -1,0 +1,9 @@
+version: '1.0'
+
+services:
+  grpc:
+    image: grpc
+    build: .
+    container_name: "grpc"
+    ports:
+      - "8070:8080"
