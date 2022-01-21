@@ -6,4 +6,4 @@ services:
     build: .
     container_name: "grpc"
     ports:
-      - "8070:8080"
+      - "8070:8070"
